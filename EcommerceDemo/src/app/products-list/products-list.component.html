@@ -1,0 +1,24 @@
+<div class="main-div">
+    <mat-card class="items-list">
+        <mat-card-header>List of items</mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item *ngFor="let product of products">
+                    <div matListItemLine class="product-container">
+                        <div class="product-feature">
+                            {{product.title}}
+                        </div >
+                        <div class="product-feature">
+                            {{product.price}}
+                        </div>
+                        <div class="product-feature"> 
+                            <a mat-button href="add/{{product}}" target="_blank">Add to card</a>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+      </mat-card>
+</div>
+
+

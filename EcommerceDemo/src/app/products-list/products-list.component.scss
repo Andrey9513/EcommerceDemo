@@ -1,0 +1,20 @@
+.main-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items-list {
+    width: 30%
+}
+
+.product-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-feature{
+    display: flex;
+    align-items: center;
+}
