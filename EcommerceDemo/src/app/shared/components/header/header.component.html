@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <div class="header-container">
+      <button mat-button [routerLink]="['/']" >Home</button>
+      <button [routerLink]="['/cart']" mat-button >Shopping cart</button>
+        <span class="spacer"></span>
+      <button id="itemsButton" disabled mat-button >Items in cart - {{itemsCount}}</button>
+    </div>
+
+</mat-toolbar>

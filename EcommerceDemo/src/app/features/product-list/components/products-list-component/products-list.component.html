@@ -1,0 +1,14 @@
+<div class="main-div">
+    <mat-card class="items-list">
+        <mat-card-header>List of items</mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item *ngFor="let product of products">
+                    <app-product [product]="product" (productAdded)="onProductAdded($event)"></app-product>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+      </mat-card>
+</div>
+
+
