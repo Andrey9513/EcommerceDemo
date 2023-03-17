@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared-module/shared-module.module';
 import { StoreModule } from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools'
-import { cartReducer } from './shared/state/cart.reducer';
+import { cartReducer, initState} from './shared/state/cart.reducer';
 import { CartService } from './shared/services/cart.service';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { CartService } from './shared/services/cart.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    StoreModule.forRoot(cartReducer),
+    StoreModule.forRoot({cart: cartReducer}),
     StoreDevtoolsModule.instrument()
     ],
   bootstrap: [AppComponent]
