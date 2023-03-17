@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@ngrx/effects": "^15.3.0",
+    "@ngrx/store": "^15.3.0",
+    "@ngrx/store-devtools": "^15.3.0",
+    "immutable": "^4.3.0"
+  }
+}
