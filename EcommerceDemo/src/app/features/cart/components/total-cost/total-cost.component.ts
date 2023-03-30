@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { CartService } from 'src/app/shared/services/cart.service';
+import * as fromCart from "../../../../shared/state/cart.reducer";
 
 @Component({
   selector: 'app-total-cost',
@@ -8,13 +11,13 @@ import { CartService } from 'src/app/shared/services/cart.service';
 })
 export class TotalCostComponent implements OnInit{
 
-  total:number = 0;
+  total$!: Observable<number>;
 
   ngOnInit(): void {
-    this.cartService.getTotal().subscribe(t => this.total = t);
+    this.total$ = this.store.pipe(select(fromCart.getTotal));
   }
 
-  constructor(private cartService: CartService)
+  constructor(private cartService: CartService, private store: Store<fromCart.AppState> )
   {
 
   }

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import {Store, select} from "@ngrx/store";
+
+import * as fromCart from "../../state/cart.reducer";
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-header',
@@ -8,14 +13,13 @@ import { CartService } from '../../services/cart.service';
 })
 export class HeaderComponent implements OnInit{
 
-  itemsCount: number = 0;
+  itemsCount$!: Observable<number>;
 
   ngOnInit(): void {
-    this.cartService.getCount().subscribe(c => this.itemsCount = c);
-
+    this.itemsCount$ = this.store.pipe(select(fromCart.getCount))
   }
 
-  constructor(private cartService : CartService)
+  constructor(private store:Store<fromCart.AppState>)
   {
 
   }

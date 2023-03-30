@@ -3,7 +3,7 @@
       <button mat-button [routerLink]="['/']" >Home</button>
       <button [routerLink]="['/cart']" mat-button >Shopping cart</button>
         <span class="spacer"></span>
-      <button id="itemsButton" disabled mat-button >Items in cart - {{itemsCount}}</button>
+      <button id="itemsButton" disabled mat-button >Items in cart - {{itemsCount$ | async}}</button>
     </div>
 
 </mat-toolbar>

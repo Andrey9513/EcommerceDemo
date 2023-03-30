@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
+import { CartService } from '../services/cart.service';
 
 @NgModule({
   declarations: [
